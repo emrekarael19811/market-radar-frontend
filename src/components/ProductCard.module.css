@@ -86,13 +86,46 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.migros { background-color: var(--migros-color); }
-.sok { background-color: var(--sok-color); }
-.a101 { background-color: var(--a101-color); }
-.bim { background-color: var(--text-secondary); }
+/* Market renk noktaları */
+.migros    { background-color: var(--migros-color); }
+.sok       { background-color: var(--sok-color); }
+.a101      { background-color: var(--a101-color); }
+.bim       { background-color: #e53935; }
 .carrefoursa { background-color: var(--carrefoursa-color); }
+
+/* Market satır renkleri — sol kenarlık + hafif arka plan */
+.priceRow.rowMigros {
+  border-left: 3px solid var(--migros-color);
+  background: rgba(255, 121, 0, 0.06);
+}
+.priceRow.rowMigros:hover { background: rgba(255, 121, 0, 0.1); }
+
+.priceRow.rowSok {
+  border-left: 3px solid var(--sok-color);
+  background: rgba(255, 204, 0, 0.05);
+}
+.priceRow.rowSok:hover { background: rgba(255, 204, 0, 0.09); }
+
+.priceRow.rowA101 {
+  border-left: 3px solid var(--a101-color);
+  background: rgba(0, 184, 230, 0.05);
+}
+.priceRow.rowA101:hover { background: rgba(0, 184, 230, 0.09); }
+
+.priceRow.rowCarrefoursa {
+  border-left: 3px solid var(--carrefoursa-color);
+  background: rgba(0, 56, 123, 0.07);
+}
+.priceRow.rowCarrefoursa:hover { background: rgba(0, 56, 123, 0.12); }
+
+/* Market isim renkleri */
+.labelMigros    { color: var(--migros-color); font-weight: 700; }
+.labelSok       { color: #f5c400; font-weight: 700; }
+.labelA101      { color: var(--a101-color); font-weight: 700; }
+.labelCarrefoursa { color: #5b9bd5; font-weight: 700; }
 
 .priceValue {
   font-size: 1.1rem;

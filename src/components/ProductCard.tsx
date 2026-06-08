@@ -22,7 +22,22 @@ const MARKET_NAMES: Record<string, string> = {
   migros: 'Migros',
   sok: 'ŞOK',
   a101: 'A101',
-  carrefoursa: 'CarrefourSA'
+  carrefoursa: 'CarrefourSA',
+};
+
+// Her market için CSS sınıf eklentileri
+const MARKET_ROW_CLASS: Record<string, string> = {
+  migros:     'rowMigros',
+  sok:        'rowSok',
+  a101:       'rowA101',
+  carrefoursa:'rowCarrefoursa',
+};
+
+const MARKET_LABEL_CLASS: Record<string, string> = {
+  migros:     'labelMigros',
+  sok:        'labelSok',
+  a101:       'labelA101',
+  carrefoursa:'labelCarrefoursa',
 };
 
 const getCategoryIcon = (category: string) => {
@@ -66,14 +81,18 @@ export default function ProductCard({ product }: Props) {
       <div className={styles.pricesContainer}>
         {prices.map(([market, price]) => {
           const isBest = price === minPrice;
+          const rowClass = MARKET_ROW_CLASS[market] ? styles[MARKET_ROW_CLASS[market]] : '';
+          const labelClass = MARKET_LABEL_CLASS[market] ? styles[MARKET_LABEL_CLASS[market]] : '';
           return (
-            <div 
-              key={market} 
-              className={`${styles.priceRow} ${isBest ? styles.bestPriceRow : ''}`}
+            <div
+              key={market}
+              className={`${styles.priceRow} ${rowClass} ${isBest ? styles.bestPriceRow : ''}`}
             >
               <div className={styles.marketLabel}>
                 <span className={`${styles.marketDot} ${styles[market] || ''}`}></span>
-                {MARKET_NAMES[market] || market.toUpperCase()}
+                <span className={labelClass}>
+                  {MARKET_NAMES[market] || market.toUpperCase()}
+                </span>
               </div>
               <div className={styles.priceContainerWrap}>
                 <div className={`${styles.priceValue} ${isBest ? styles.bestPrice : ''}`}>

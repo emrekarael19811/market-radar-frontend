@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import Link from "next/link";
-import { ArrowLeft, Flame, Clock, Store, SlidersHorizontal } from "lucide-react";
+import { Flame, Clock, Store, SlidersHorizontal } from "lucide-react";
 import { supabase, Campaign } from "@/lib/supabase";
 import CampaignCard from "@/components/CampaignCard";
 import styles from "./page.module.css";
@@ -90,10 +89,6 @@ export default function FirsatlarPage() {
 
       {/* Başlık */}
       <div className={styles.header}>
-        <Link href="/" className={styles.backLink}>
-          <ArrowLeft size={18} />
-          MarketRadar'a Dön
-        </Link>
         <div className={styles.titleRow}>
           <Flame size={32} className={styles.titleIcon} />
           <div>

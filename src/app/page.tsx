@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Search, Layers, BadgePercent, CheckCircle2, Store, Sparkles, Flame } from "lucide-react";
+import { Search, Layers, BadgePercent, CheckCircle2, Store, Sparkles } from "lucide-react";
 import styles from "./page.module.css";
 import { supabase, Product } from "@/lib/supabase";
 import ProductCard from "@/components/ProductCard";
@@ -116,30 +115,6 @@ export default function Home() {
       <div className={styles.glowBlob2}></div>
 
       <CartDrawer />
-
-      {/* Fırsatlar Sayfasına Bağlantı */}
-      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "0.75rem", position: "relative", zIndex: 1 }}>
-        <Link
-          href="/firsatlar"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.4rem",
-            padding: "0.55rem 1.1rem",
-            borderRadius: "10px",
-            background: "rgba(244, 63, 94, 0.12)",
-            border: "1px solid rgba(244, 63, 94, 0.35)",
-            color: "#f43f5e",
-            fontWeight: 700,
-            fontSize: "0.85rem",
-            textDecoration: "none",
-            transition: "background 0.15s",
-          }}
-        >
-          <Flame size={16} />
-          Haftalık Fırsatlar
-        </Link>
-      </div>
 
       <div className={styles.header}>
         {/* Radar Scanner Logosu */}

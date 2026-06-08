@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 };
 
 import { CartProvider } from "@/context/CartContext";
+import Navbar from "@/components/Navbar";
 
 export default function RootLayout({
   children,
@@ -17,7 +18,11 @@ export default function RootLayout({
     <html lang="tr">
       <body>
         <CartProvider>
-          {children}
+          <Navbar />
+          {/* Navbar 56px yüksekliğinde — içerik onun altında başlasın */}
+          <div style={{ paddingTop: '56px' }}>
+            {children}
+          </div>
         </CartProvider>
       </body>
     </html>
